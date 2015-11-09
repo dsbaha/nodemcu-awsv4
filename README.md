@@ -45,9 +45,7 @@ Message=This is a Test Message&Action=Publish&Subject=This is a Test Subject&Top
 
 Then just use it like the following ...
 
-function httpclient()
-  conn=net.createConnection(net.TCP,0)
-  conn:on('receive', function(conn, payload) print(payload) end)
-  conn:connect('80', aws.service .. '.' ..aws.region .. '.' .. 'amazonaws.com')
-  conn:send(awspoststring)
-end
+conn=net.createConnection(net.TCP,0)
+conn:on('receive', function(conn, payload) print(payload) end)
+conn:connect('80', aws.service .. '.' ..aws.region .. '.' .. 'amazonaws.com')
+conn:send(awspoststring)
